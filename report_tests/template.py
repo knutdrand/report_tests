@@ -1,5 +1,6 @@
 # Markdown Example
 from report_tests.function_info import get_function_info
+import markdown
 
 template = """\
 # {Title}
@@ -17,3 +18,10 @@ def get_function_markdown(function):
     return template.format(Title=info.title,
                            Documentation=info.description,
                            code=info.code)
+
+
+def get_html(function):
+    md = get_function_markdown(function)
+    return markdown.markdown(md)
+
+
