@@ -41,4 +41,9 @@ setup(
     url='https://github.com/knutdrand/report_tests',
     version='0.0.1',
     zip_safe=False,
+    entry_points={
+        'console_scripts': [
+            'report_tests=report_tests.cli:main',
+        ],
+    },
 )
