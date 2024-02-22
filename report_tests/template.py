@@ -27,7 +27,7 @@ def get_function_markdown(function):
         image_text = ""
     return template.format(Title=info.title,
                            Documentation=info.description,
-                           code=info.code) + image_text
+                           code=info.code) + image_text + "\n"
 
 
 def get_html(function):

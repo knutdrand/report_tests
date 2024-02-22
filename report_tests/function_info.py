@@ -39,7 +39,9 @@ def get_function_info(function):
     description = function.__doc__
     if description is None:
         description = ""
-    description = description.strip()
+    # remove indents from docstring
+    description = inspect.cleandoc(description)
+    # description = description
     code = inspect.getsource(function)
     code = remove_title_anddocstring(code)
     code = remove_init_tab(code)
